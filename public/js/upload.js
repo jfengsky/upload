@@ -9,27 +9,23 @@
 
 define(function (require, exports, module) {
   "use strict";
-  /**
-   *
-   * @param {String} _id        按钮id
-   * @param {Object} _options   配置参数
-   *    @param {Boolean} multi     是否多文件
-   *    @param {String}  fileType  文件类型('*.png;*.gif;*.jpg;*.bmp;*.jpeg')
-   *    @param {Number}  limitSize 文件大小(MB)
-   * @constructor
-   */
-  function Upload(_id, _options){
-    this.id = _id;
-    this._options = _options;
-  }
+
+  function Upload(){}
 
   Upload.prototype = {
 
     /**
-     * 初始化
+     *
+     * @param {String} _id        按钮id
+     * @param {Object} _options   配置参数
+     *    @param {Boolean} multi     是否多文件
+     *    @param {String}  fileType  文件类型('*.png;*.gif;*.jpg;*.bmp;*.jpeg')
+     *    @param {Number}  limitSize 文件大小(MB)
+     * @constructor
      */
-    init: function(){
-      console.log(options);
+    init: function(_id, _options){
+      console.log(_id);
+      console.log(_options);
       // 判断上传个数(单个)
 
     }

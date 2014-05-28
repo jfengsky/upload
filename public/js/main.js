@@ -8,7 +8,7 @@
 define(function (require) {
   "use strict";
   var upload = require('./upload');
-  new upload('#test', {
+  new upload().init('#test', {
     multi: true
-  }).init();
+  });
 });
