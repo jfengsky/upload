@@ -36,7 +36,6 @@ define(function(require, exports, module) {
         }
       });
     },
-
     init: function(){
       var self = this;
       $('#J_button').change(function(ev){
@@ -48,5 +47,6 @@ define(function(require, exports, module) {
     }
   };
   module.exports = Upload;
+
 
 });
