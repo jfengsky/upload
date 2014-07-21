@@ -10,7 +10,6 @@ if (isset($_FILES["Filedata"]) || !is_uploaded_file($_FILES["Filedata"]["tmp_nam
 		exit;
 	}
 	
-	//将数组的输出存起来以供查看
 	$fileName = 'test.txt';
 	$postData = var_export($file_info, true);
 	$file     = fopen('' . $fileName, "w");
