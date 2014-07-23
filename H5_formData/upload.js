@@ -7,13 +7,35 @@ define(function(require, exports, module) {
   Upload = function() {};
   Upload.prototype = {
     /*
+     * 上传文件
+    */
+
+    _updata: function(_data, _callback) {
+      return $.ajax({
+        url: 'upload.php',
+        type: 'post',
+        data: _data,
+        processData: false,
+        contentType: false,
+        sucdess: function(_res) {
+          return _callback(_res);
+        }
+      });
+    },
+    /*
      * 处理文件
      * @param {Array} _files 上传的文件数组
     */
 
     _checkFiles: function(_files) {
+      var formData;
+      formData = new FormData();
       $.each(_files, function(_index, _item) {
-        return console.log(_item);
+        console.log(_item);
+        return formData.append('images[]', _item);
+      });
+      this._updata(formData, function(data) {
+        return console.log(data);
       });
     },
     /*

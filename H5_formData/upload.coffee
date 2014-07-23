@@ -12,12 +12,31 @@ define (require, exports, module) ->
   Upload:: =
 
     ###
+     * 上传文件
+    ###
+    _updata: (_data, _callback) ->
+      $.ajax
+        url: 'upload.php'
+        type: 'post'
+        data: _data
+        processData: false
+        contentType: false
+        sucdess: (_res) ->
+          _callback _res
+
+
+
+    ###
      * 处理文件
      * @param {Array} _files 上传的文件数组
     ###
     _checkFiles: (_files) ->
+      formData = new FormData()
       $.each _files, (_index, _item) ->
         console.log _item
+        formData.append('images[]', _item)
+      this._updata formData, (data) ->
+        console.log(data)
       return
 
     ###
